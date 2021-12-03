@@ -26,3 +26,4 @@ Route::get('/import', 'HomeController@importView')->name('importView');
 Route::get('/export', 'HomeController@exportView')->name('exportView');
 Route::get('/export-date', 'HomeController@betweenDateView')->name('betweenDateView');
 Route::post('/export-file', 'HomeController@export')->name('export-file');
+Route::get('/export-pdf', 'HomeController@exportPDF')->name('exportPDF');

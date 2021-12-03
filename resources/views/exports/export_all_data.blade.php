@@ -15,6 +15,11 @@
 		<a href="{{ route('check') }}" class="btn btn-success">Download Excel</a>
 	</div>
 
+	<div class="container mt-5" style="width:500px;">
+		<a href="{{ route('exportPDF') }}" class="btn btn-info">Download PDF</a>
+	</div>
+
+
 
 	
 

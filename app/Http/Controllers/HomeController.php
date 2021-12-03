@@ -7,7 +7,7 @@ use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\User;
-
+use PDF;
 class HomeController extends Controller
 {
     /**
@@ -73,6 +73,15 @@ class HomeController extends Controller
 
        return Excel::download(new UsersExport($from,$to), 'User-List-Updated.xlsx');
 
+    }
+
+    function exportPDF()
+    {
+        $data = User::all();
+        $pdf = PDF::loadView('exports.pdf', [
+            'data' => $data
+        ]);
+        return $pdf->download('User-List.pdf');
     }
     
 }
